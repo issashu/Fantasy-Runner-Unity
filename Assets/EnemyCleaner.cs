@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyCleaner : MonoBehaviour {
+public class EnemyCleaner : MonoBehaviour 
+{
 
-	// Use this for initialization
+/*
+// Use this for initialization
 	void Start () {
 	
 	}
@@ -25,5 +27,5 @@ public class EnemyCleaner : MonoBehaviour {
 		}
 
 		void 
-	}
+	}*/
 }
