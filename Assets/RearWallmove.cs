@@ -8,7 +8,6 @@ public class RearWallmove : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-
 		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
@@ -25,14 +24,11 @@ public class RearWallmove : MonoBehaviour
 		if (other.tag == "Player") 
 		{
 			Player.GetComponent<PlayerHealth> ().Die ();
-
-		} 	
+		}
 
 		if (other.tag == "Shooter" || other.tag == "Pusher") 
 		{
-
 			GameObject.Destroy(other.gameObject);
-
-		}                 
+		}
 	}
 }
