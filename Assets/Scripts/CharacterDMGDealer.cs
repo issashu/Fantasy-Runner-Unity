@@ -14,7 +14,9 @@ public class CharacterDMGDealer : MonoBehaviour {
 	void Update () {
 	
 	}
-
+    //This function deals with detecting the collision between the Player 
+    //and the enemy bullet.
+    //It can be called within the bullet code to do damage
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (other.gameObject.tag == "Player") 
