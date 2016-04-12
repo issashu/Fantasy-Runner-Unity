@@ -14,9 +14,7 @@ public class RearWallmove : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-
 		//transform.position = new Vector3 (Player.transform.position.x, -10f, transform.position.z);
-
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
