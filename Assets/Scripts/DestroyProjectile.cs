@@ -13,6 +13,9 @@ public class DestroyProjectile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+
+        //public GameObject test;
+       // transform.position.x = new Vector2(0f, 0f);
 	}
 }
