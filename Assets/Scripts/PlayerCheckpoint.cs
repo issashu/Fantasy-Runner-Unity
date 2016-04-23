@@ -23,7 +23,7 @@ public class PlayerCheckpoint : MonoBehaviour
 
     public GameObject Platformgenerator;
 
-
+    //Thi is a comment to test VS2015 commit to gitlab function
     // Use this for initialization
     void Start()
     {
