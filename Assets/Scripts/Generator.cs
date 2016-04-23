@@ -58,7 +58,7 @@ public class Generator : MonoBehaviour {
             platformSelector = Random.Range(0, theObjectPools.Length);
             heightChange = transform.position.y + Random.Range(maxHeightChange, -maxHeightChange);
 
-            if (heightChange > maxHeight)//tezi redove ne sa zaduljitelni zashtoto camera sledva player
+            if (heightChange > maxHeight)//This line is not mandatory, since the camera is following the player
             { heightChange = maxHeight; }
             else if(heightChange<minHight)
             { heightChange = minHight; }
