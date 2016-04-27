@@ -21,6 +21,9 @@ public class PlayerCheckpoint : MonoBehaviour
     public Transform platformgeneratorSpawner;
     public Vector3 platformgeneratorStartPoint;
 
+    public Transform backgroundgeneratorSpawner;
+    public Vector3 backgroundgeneratorStartPoint;
+
     public GameObject Platformgenerator;
 
     // Use this for initialization
@@ -57,13 +60,22 @@ public class PlayerCheckpoint : MonoBehaviour
         wallSpawner.position = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x - 10f, 0f);
         //generatorSpawner.position = generatorStartPoint;
         //destroyerSpawner.position = destroyerStartPoint;
-        platformgeneratorSpawner.position = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x, 0f);
-        Debug.Log ("Position restored" + platformgeneratorStartPoint);
+        platformgeneratorSpawner.position = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x + 5f, 0f);
+        backgroundgeneratorSpawner.position = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x - 15f, 0f);
+        //Debug.Log ("Position restored" + platformgeneratorStartPoint);
         //Platformgenerator.SetActive (true);
         foreach (GameObject Platform in GameObject.FindGameObjectsWithTag("Platforms"))
         {
             Platform.SetActive(false);
-        } 
+        }
+        foreach (GameObject FallPlatform in GameObject.FindGameObjectsWithTag("FallingPlatform"))
+        {
+            FallPlatform.SetActive(false);
+        }
+        foreach (GameObject BG in GameObject.FindGameObjectsWithTag("Background"))
+        {
+            BG.SetActive(false);
+        }
 
     }
 
@@ -81,7 +93,8 @@ public class PlayerCheckpoint : MonoBehaviour
         generatorStartPoint = generatorSpawner.position;
         destroyerStartPoint = destroyerSpawner.position;
         platformgeneratorStartPoint = platformgeneratorSpawner.position;
-        Debug.Log("Position saved" + platformgeneratorStartPoint);
+        backgroundgeneratorStartPoint = backgroundgeneratorSpawner.position;
+        //Debug.Log("Position saved" + platformgeneratorStartPoint);
         this.GetComponentInChildren<ParticleSystem>().Play();
 
     }
