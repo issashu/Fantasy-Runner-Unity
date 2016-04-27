@@ -186,7 +186,38 @@ public class PlayerMovement : MonoBehaviour {
             
        
 	}
+    IEnumerator SpeedUp()
+    {
+        float BaseMoveSpeed = moveSpeed;
+        moveSpeed += 5;
+        yield return new WaitForSeconds(5);
+        moveSpeed = BaseMoveSpeed;
+    }
+    void HealUp()
+    {
+        ph.curHealth = ph.maxHealth;
+    }
+    void ManaTap()
+    {
+        ph.curMana += 20;
+    }
 
+    void PowerUp(int a)
+    {
+        switch (a)
+        {
+            case 1:
+                StartCoroutine(SpeedUp());
+                break;
+
+            case 2:
+                HealUp();
+                break;
+            case 3:
+                ManaTap();
+                break;
+        }
+    }
     
 
 
