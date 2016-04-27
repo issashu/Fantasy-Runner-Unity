@@ -6,6 +6,7 @@ public class EnemyHP : MonoBehaviour
 	//Следните две променливи са за кръвта на противниците. Могат да бъдат променяни директно от инспектора в Юнити (public type)
 	public int EnemyMaxHealth;
 	public float PointsPerKill;
+    public GameObject PowerUp;
 
 	int EnemyCurrHealth; //change to private after tests
 
@@ -20,6 +21,12 @@ public class EnemyHP : MonoBehaviour
 	{
 		if (EnemyCurrHealth <= 0) 
 		{
+            float percent = Random.Range(0,100);
+            if(percent <= 20)
+            {
+                Instantiate(PowerUp, transform.position, transform.rotation);
+            }
+            Debug.Log(percent);
 			Destroy (transform.parent.gameObject); //ако противника умре, го дестройваме
 			GameObject.FindGameObjectWithTag ("ScoreControl").GetComponent<ScoreManage> ().ScoreCounter += PointsPerKill;
 
