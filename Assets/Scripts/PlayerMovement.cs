@@ -159,7 +159,7 @@ public class PlayerMovement : MonoBehaviour {
 		Rb2D.velocity = new Vector2(Hot * moveSpeed, Rb2D.velocity.y);
 
 		//Код за точкова система
-		if(Hot != 0)
+		if(Hot > 0)
 		{
 			GameObject.FindGameObjectWithTag ("ScoreControl").GetComponent<ScoreManage> ().ScoreCount = true;
 			AnimateBG = true;

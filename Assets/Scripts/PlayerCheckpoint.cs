@@ -54,7 +54,7 @@ public class PlayerCheckpoint : MonoBehaviour
 
     public IEnumerator CheckpointRes()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.0f);
         playerSpawner.position = playerStartPoint;
         platformCheckpointSpawner.position = platformCheckpointStartPoint;
         wallSpawner.position = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position.x - 10f, 0f);
